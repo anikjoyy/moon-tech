@@ -1,30 +1,47 @@
-import { createBrowserRouter } from "react-router-dom";
-import Main from "../layout/Main";
-import About from "../pages/About";
-import Cart from "../pages/Cart";
-import Home from "../pages/Home";
-import TopRated from "../pages/TopRated";
+import { createBrowserRouter } from 'react-router-dom';
+import Dashboard from '../layout/Dashboard/Dashboard';
+import Main from '../layout/Main/Main';
+import AddProduct from '../pages/Dashboard/AddProduct';
+import ProductList from '../pages/Dashboard/ProductList';
+import About from '../pages/Main/About';
+import Cart from '../pages/Main/Cart';
+import Home from '../pages/Main/Home';
+import TopRated from '../pages/Main/TopRated';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <About />,
       },
       {
-        path: "top-rated",
+        path: 'top-rated',
         element: <TopRated />,
       },
       {
-        path: "cart",
+        path: 'cart',
         element: <Cart />,
+      },
+    ],
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <ProductList />,
+      },
+      {
+        path: 'add-product',
+        element: <AddProduct />,
       },
     ],
   },

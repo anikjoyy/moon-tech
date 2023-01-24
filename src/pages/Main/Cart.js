@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -9,7 +9,7 @@ const Cart = () => {
       {cart
         .sort((a, b) => a._id - b._id)
         .map((product) => (
-          <ProductCard key={product._id} product={product} />
+          <ProductCard key={product.model} product={product} />
         ))}
     </div>
   );
