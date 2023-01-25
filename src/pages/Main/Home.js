@@ -14,7 +14,7 @@ const Home = () => {
   const state = useSelector((state) => state);
   console.log(state);
 
-  const activeClass = 'text-white  bg-indigo-500 border-white';
+  const activeClass = 'text-red-800  bg-indigo-500 border-yellow-500';
 
   return (
     <div className='max-w-7xl gap-14 mx-auto my-10'>
