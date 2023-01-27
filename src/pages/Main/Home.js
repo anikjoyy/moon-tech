@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard';
-import { useSelector } from 'react-redux';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    fetch('products.json')
+    fetch('http://localhost:5000/products')
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data.data));
   }, []);
 
-  const state = useSelector((state) => state);
-  console.log(state);
-
-  const activeClass = 'text-red-800  bg-indigo-500 border-yellow-500';
+  const activeClass = 'text-white  bg-indigo-500 border-white';
 
   return (
     <div className='max-w-7xl gap-14 mx-auto my-10'>
